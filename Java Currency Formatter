@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+        double myNumber = sc.nextDouble();
+        
+NumberFormat nf1 = NumberFormat.getCurrencyInstance(Locale.US);
+        String us = nf1.format(myNumber);
+        System.out.println("US: "+us); 
+         
+       Locale l = new Locale("hi","In"); 
+    //    Locale x = new Locale("en","In");
+NumberFormat nf4 = NumberFormat.getCurrencyInstance(l);
+       String india = nf4.format(myNumber);
+       System.out.println("India: "+ india);
+    
+NumberFormat nf2 = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        String china = nf2.format(myNumber);
+         System.out.println("China: "+china);
+
+         
+NumberFormat nf3 = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        String france= nf3.format(myNumber);
+         System.out.println("France: "+france);
+           
+    }
+}
