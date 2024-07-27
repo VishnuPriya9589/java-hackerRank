@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      
+      int first =0;
+      double second =0.0;
+      try{
+          
+          first  = (Integer.parseInt(sc.nextLine())) ;  
+      }catch(NumberFormatException e){
+          e.printStackTrace();
+      }
+      try{
+          second  = (Double.parseDouble(sc.nextLine())) ;  
+      }catch(Exception e){
+          e.printStackTrace();
+      }
+    //   double second = sc.nextDouble();
+      
+      String third = sc.nextLine();
+      
+      System.out.println("String: "+ third);
+      System.out.println("Double: "+ second);
+      System.out.println("Int: "+ first);
+}
+}
