@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String string1 = sc.next();
+        int integer1 = sc.nextInt();
+        System.out.println("================================");
+        System.out.printf("%-15s%03d\n",string1,integer1);
+        // System.out.println("\n");
+        
+        String string2 = sc.next();
+        int integer2 = sc.nextInt();
+        System.out.printf("%-15s%03d\n",string2,integer2);
+        //    System.out.println("\n");
+        
+         String string3 = sc.next();
+        int integer3 = sc.nextInt();
+          System.out.printf("%-15s%03d\n",string3,integer3);
+         // System.out.println("\n");
+        System.out.print("================================");
+    }
+}
