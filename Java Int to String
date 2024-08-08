@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int integer = sc.nextInt();
+      String str = String.valueOf(integer); 
+      if(integer == Integer.parseInt(str)){
+          System.out.println("Good job");
+      }
+    }
+}
