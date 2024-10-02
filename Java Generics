@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        ArrayList<Integer> list1 = new ArrayList<Integer>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        
+        ArrayList<String> list2 = new ArrayList<String>();
+        list2.add("Hello");
+        list2.add("World");
+        
+        printArray(list1);
+        printArray(list2);   
+    }
+    static<M>void printArray(ArrayList<M> list){
+            for(int i =0;i<list.size();i++){
+                System.out.println(list.get(i));
+            }
+        }
+}
