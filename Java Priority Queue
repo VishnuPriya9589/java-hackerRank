@@ -1,0 +1,80 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.*;
+
+class Student{
+    int id;
+    String name;
+    double cgpa;
+   public Student(int id,String name,double cgpa){
+        this.id = id;
+        this.name=name;
+        this.cgpa=cgpa;   
+    }
+    
+    int getId(){
+        return id;
+    }
+    String getName(){
+        return name;
+    }
+    double getCGPA(){
+        return cgpa;
+    }
+    public String toString(){
+        return this.name;
+    }
+}
+class Sequence implements Comparator<Student>{
+    public int compare(Student s1,Student s2){
+    Integer i1 = s1.getId();
+        Integer i2=s2.getId();
+        Double cgpa1 = s1.getCGPA();
+        Double cgpa2=s2.getCGPA();
+        String fn1=s1.getName();
+        String fn2=s2.getName();
+        if(cgpa1.compareTo(cgpa2)==0){
+            if(fn1.compareTo(fn2)==0){
+                return i1.compareTo(i2);
+            }else{
+                return fn1.compareTo(fn2);
+            }
+        }
+        else{
+            return cgpa2.compareTo(cgpa1);
+        }   
+    } 
+} 
+        
+class Priorities{
+    ArrayList<Student> list = new ArrayList<Student>();
+    // ArrayList<String> l = new ArrayList<>();
+    
+    List<Student>getStudents(List<String> events){
+        for(int i =0;i<events.size();i++){
+            String str = events.get(i);
+            String[] s = str.split(" ");
+            // for(int j=0;j<s.length;j++){
+            //     System.out.print(s[j]+ "      ");
+            // }
+            int length = s.length;
+            // if (length ==1){
+            //   System.out.println(s[0]);  
+            // }
+            if(s[0].equals("ENTER")){
+                list.add(new Student(Integer.parseInt(s[3]),s[1],Double.parseDouble(s[2]))); 
+                Collections.sort(list,new Sequence());
+            }
+            // System.out.println(list+"+++++++++++++++");
+            else{
+            //   System.out.println(list.remove(0));
+            if(list.isEmpty()==false)
+               list.remove(0);
+            } 
+        }
+        return list;
+    }
+}
+
+
