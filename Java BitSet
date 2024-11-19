@@ -1,0 +1,72 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        
+        BitSet B1 = new BitSet(n);
+        BitSet B2 = new BitSet(n);
+        
+       for(int i =0;i<B1.length();i++){
+           B1.set(i,false);
+           B2.set(i,false);
+       }
+       for(int i =0;i<m;i++){
+           String s = sc.next();
+           int first = sc.nextInt();
+           int second = sc.nextInt();
+           
+           if(s.equals("AND")){
+               if(first==1){
+                 B1.and(B2);   
+               }
+               if(first==2){
+                 B2.and(B1);   
+               }
+              
+           }
+           if(s.equals("OR")){
+               if(first==1){
+                 B1.or(B2);   
+               }
+               if(first==2){
+                 B2.or(B1);   
+               }
+           }
+           if(s.equals("XOR")){
+               if(first==1){
+                 B1.xor(B2);   
+               }
+               if(first==2){
+                 B2.xor(B1);   
+               }
+           }
+           if(s.equals("SET")){
+               if(first==1){
+                B1.set(second);
+               }
+               if(first==2){
+                B2.set(second);
+               } 
+           }
+           if(s.equals("FLIP")){
+               if(first==1){
+                B1.flip(second);
+               }
+               if(first==2){
+                B2.flip(second);
+               }
+             
+           }     
+           System.out.println(B1.cardinality()+" "+B2.cardinality());
+        }
+    
+      
+        
+        
+    }
+}
